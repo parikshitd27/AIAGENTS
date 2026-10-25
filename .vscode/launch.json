@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Analyze company (press F5)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/fundamental_analysis_agents.py",
+      "args": ["${input:ticker}", "--transcript", "${input:transcript}"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "ticker",
+      "type": "promptString",
+      "description": "Yahoo Finance ticker (e.g. AAPL, MSFT, NESN.SW)",
+      "default": "AAPL"
+    },
+    {
+      "id": "transcript",
+      "type": "promptString",
+      "description": "Transcript path, e.g. transcripts/aapl.txt (leave empty to skip)",
+      "default": ""
+    }
+  ]
+}
